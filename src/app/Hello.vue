@@ -1,6 +1,5 @@
 <template>
-  <div>
-
+  <div class="row">
     <h1>Vue JS 2 - Tooltipster componente use example</h1>
     <div>
       <vue-tooltipster label="I am the tooltip">
@@ -34,6 +33,9 @@
 
 <script>
 import VueTooltipster from './vue-tooltipster.vue';
+import jQuery from 'jquery';
+window.jQuery = jQuery;
+require('bootstrap');
 export default {
   name: 'Hello',
   data() {
