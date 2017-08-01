@@ -29,9 +29,9 @@
     "eslint-plugin-babel": "^4.0.1",
     "eslint-plugin-html": "^2.0.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
-    "gulp": "gulpjs/gulp#4ed9a4a3275559c73a396eff7e1fde3824951ebb",
+    "gulp": "github:gulpjs/gulp#4ed9a4a3275559c73a396eff7e1fde3824951ebb",
     "gulp-filter": "^5.0.0",
-    "gulp-hub": "frankwallis/gulp-hub#d461b9c700df9010d0a8694e4af1fb96d9f38bf4",
+    "gulp-hub": "github:frankwallis/gulp-hub#d461b9c700df9010d0a8694e4af1fb96d9f38bf4",
     "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.8",
     "html-webpack-plugin": "^2.28.0",
@@ -74,5 +74,24 @@
     "plugins": [
       "html"
     ]
-  }
+  },
+  "name": "vue-tooltipster",
+  "description": "This is a Vue tooltipster component for VueJS2 inspired in [Tooltipster plugin](http://iamceege.github.io/tooltipster/).",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpfarher/vue-tooltipster.git"
+  },
+  "keywords": [
+    "vuejs",
+    "tooltipster",
+    "tooltip"
+  ],
+  "author": "Christian Pfarher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cpfarher/vue-tooltipster/issues"
+  },
+  "homepage": "https://github.com/cpfarher/vue-tooltipster#readme"
 }
