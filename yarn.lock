@@ -2720,7 +2720,7 @@ gulp-filter@^5.0.0:
     multimatch "^2.0.0"
     streamfilter "^1.0.5"
 
-gulp-hub@frankwallis/gulp-hub#d461b9c700df9010d0a8694e4af1fb96d9f38bf4:
+"gulp-hub@github:frankwallis/gulp-hub#d461b9c700df9010d0a8694e4af1fb96d9f38bf4":
   version "4.1.0"
   resolved "https://codeload.github.com/frankwallis/gulp-hub/tar.gz/d461b9c700df9010d0a8694e4af1fb96d9f38bf4"
   dependencies:
@@ -2774,7 +2774,7 @@ gulp-util@^3.0, gulp-util@^3.0.2, gulp-util@^3.0.6, gulp-util@^3.0.8:
     through2 "^2.0.0"
     vinyl "^0.5.0"
 
-gulp@gulpjs/gulp#4ed9a4a3275559c73a396eff7e1fde3824951ebb:
+"gulp@github:gulpjs/gulp#4ed9a4a3275559c73a396eff7e1fde3824951ebb":
   version "4.0.0-alpha.2"
   resolved "https://codeload.github.com/gulpjs/gulp/tar.gz/4ed9a4a3275559c73a396eff7e1fde3824951ebb"
   dependencies:
@@ -6314,9 +6314,9 @@ void-elements@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
-vue-awesome@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/vue-awesome/-/vue-awesome-2.3.1.tgz#edd8f54a62af322df81f06ddf25c1ec2ae995b05"
+vue-awesome@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/vue-awesome/-/vue-awesome-2.3.3.tgz#e83f976fe5c7f86d207c24ca33731bdc6e9906a9"
 
 vue-hot-reload-api@^2.0.11:
   version "2.1.0"

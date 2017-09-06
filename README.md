@@ -9,6 +9,7 @@ Also it add a new feature to Tooltipster plugin:
 Checkout code and run
 
 ```bash
+npm install
 npm run serve
 ```
 
@@ -16,7 +17,6 @@ npm run serve
 
 
  * Ad Bootstrap style for hello world example
- * Publish as npm package
  * Tests...
  * ...
 
