@@ -28,7 +28,7 @@
       </div>
       <div class="hidden p-xs" style="color:black;">
         <div ref="content">
-          <div class="row" v-if="showClosebutton"><div class="btn btn-danger btn-circle btn-outline pull-right" @click="closeTooltip"><icon name="close"></icon></div></div>
+          <div v-if="showClosebutton"><div class="btn pull-right" @click="closeTooltip"><icon name="close"></icon></div></div>
           <slot name="content"></slot>
         </div>
       </div>
@@ -115,7 +115,7 @@
       tooltipsterOptions: { //  view possible options at http://iamceege.github.io/tooltipster/
         type: Object,
         default: function () { return {} }
-      }
+      },
       showClosebutton: {
         type: Boolean,
         default: true
@@ -140,6 +140,21 @@
 <style scoped>
   .hidden {
     display: none;
+  }
+  .p-xs {
+    padding: 5px;
+  }
+  .btn {
+    padding-top:2px;
+    padding-bottom:2px;
+    padding-left:10px;
+    padding-right:10px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 25px;
+  }
+  .pull-right {
+    float: right;
   }
   div {
     color: black;

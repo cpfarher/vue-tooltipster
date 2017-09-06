@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "3",
     "jquery": "^3.2.1",
     "tooltipster": "^4.2.5",
     "vue": "^2.1.10",
