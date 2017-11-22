@@ -23,12 +23,16 @@
   -->
   <template>
     <div class="full-height">
-      <div ref="tooltipster"  @click="toggleTip" class="full-height">
+      <div ref="tooltipster" @click="toggleTip" class="full-height">
         <slot></slot> <!-- trigger del tooltip -->
       </div>
       <div class="hidden p-xs" style="color:black;">
         <div ref="content">
-          <div v-if="showClosebutton"><div class="btn pull-right" @click="closeTooltip"><icon name="close"></icon></div></div>
+          <div v-if="showClosebutton">
+            <div class="btn pull-right" @click="closeTooltip" v-show="showTip">
+              <icon name="close"></icon>
+            </div>
+          </div>
           <slot name="content"></slot>
         </div>
       </div>
@@ -39,20 +43,20 @@
   import 'tooltipster/dist/css/tooltipster.bundle.min.css';
   // import 'tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-borderless.min.css'
   // import 'tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-light.min.css'
-  import 'tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-noir.min.css'
+  import 'tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-noir.min.css';
   // import 'tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-punk.min.css'
   // import 'tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css'
-  import $ from 'jquery'
-  import 'tooltipster'
-  import _ from 'lodash'
-  import 'vue-awesome/icons'
-  import Icon from 'vue-awesome/components/Icon.vue'
+  import $ from 'jquery';
+  import 'tooltipster';
+  import _ from 'lodash';
+  import 'vue-awesome/icons';
+  import Icon from 'vue-awesome/components/Icon.vue';
 
   export default {
     name: 'tooltip',
     beforeDestroy: function () {
-      this.closeTooltip()
-      this.tooltipsterInstance.close()
+      this.closeTooltip();
+      this.tooltipsterInstance.close();
     },
     components: {
       Icon
@@ -67,6 +71,14 @@
           event.stop();
         }
       });
+
+      this.tooltipsterInstance.on('before', function (event) {
+        self.$emit('openTooltipster');
+      });
+
+      this.tooltipsterInstance.on('after', function (event) {
+        self.$emit('closeTooltipster');
+      });
     },
     data: function () {
       return {
@@ -79,10 +91,12 @@
           delay: 0,
           minWidth: 450,
           interactive: true,
+          distance: 70,
           theme: 'tooltipster-noir',  // tooltipster-shadow, tooltipster-light, tooltipster-borderless, tooltipster-punk, , tooltipster-noir
           multiple: true,
           respositionOnScroll: true,
           trigger: 'custom',
+          trackTooltip: false,
           triggerOpen: {
             mouseenter: true,
             touchstart: true
@@ -97,15 +111,15 @@
     },
     methods: {
       toggleTip: function () {
-        this.showTip = !this.showTip
+        this.showTip = !this.showTip;
         if (!this.showTip) {
-          this.showConfig = false
+          this.showConfig = false;
         }
       },
       closeTooltip: function () {
-        this.toggleTip()
-        this.showConfig = false
-        this.showTip = false
+        this.toggleTip();
+        this.showConfig = false;
+        this.showTip = false;
       }
     },
     props: {
@@ -114,7 +128,7 @@
       },
       tooltipsterOptions: { //  view possible options at http://iamceege.github.io/tooltipster/
         type: Object,
-        default: function () { return {} }
+        default: function () { return {}; }
       },
       showClosebutton: {
         type: Boolean,
@@ -126,11 +140,11 @@
         if (newLabel) {
           $(this.$refs.tooltipster.children[0]).tooltipster({
             content: newLabel
-          })
+          });
         } else {
           $(this.$refs.tooltipster.children[0]).tooltipster({
             content: _.get(this.$slots, 'content[0].elm')
-          })
+          });
         }
       }
     }
